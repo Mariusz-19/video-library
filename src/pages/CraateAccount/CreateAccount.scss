@@ -2,11 +2,38 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-left: auto;
+    margin: auto;
+    justify-content: center;
+    background: rgb(78 78 78);
+    padding: 56px;
+    border-radius: 7px;
+    border: white;
+    box-shadow: 0px 0px 50px 50px rgb(78, 78, 78);
     margin-right: auto;
 }
 .email {
-    margin-bottom: 10px;
-    width: 250px;
+    margin-bottom: 5px;
+    width: 300px;
+    height: 25px;
+    border-radius: 5px;
+    border: none;
     border-style: double;
+    padding: 5px;
+    font-size: 16px;
+    }
+
+.login-button {
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: grey;
+    animation-name: flash;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    }
+      
+    @keyframes flash {
+     from {background-color: rgb(149, 149, 149);}
+     to {background-color: rgb(177, 177, 177);}
     }

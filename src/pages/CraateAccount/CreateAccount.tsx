@@ -5,8 +5,8 @@ function CreateAccount() {
 
   return (
     <form className= "form" action="">
-      email<input className="email" type="email" />
-      password<input className="password" type="password" />
+      write your email<input className="email" type="email" />
+      create password<input className="password" type="password" />
       confirm password<input className="password" type="password" />
       <button className="login-button" onClick={() => navigate("/login")}>
         Login
