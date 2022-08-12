@@ -5,6 +5,7 @@ import { VideoItemType, VideoResponse } from "../../core/types/video-item";
 import PageButton from "../../components/PageButton/Pagebutton";
 import VideoItemsBox from "../../components/VideoItemsBox/VideoItemsBox";
 import "./Home.scss";
+import LoadingCircle from "../../components/LoadingCircle/LoadingCircle";
 
 export function VideoItemList() {
   const [videoItems, setVideoItems] = useState<VideoItemType[]>([]);
@@ -54,7 +55,7 @@ export function VideoItemList() {
     setActualPage(nextSelectedPage);
   };
 
-  if (loading) return <span>Loading...</span>;
+  if (loading) return <LoadingCircle />;
   return (
     <div className="video-item-list">
       {videoItems &&

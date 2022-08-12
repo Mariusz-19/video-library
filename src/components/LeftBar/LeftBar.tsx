@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import { home, kids, library, favorite } from "../../assets/icons";
 import "./LeftBar.scss";
 
@@ -12,7 +13,7 @@ const menuItems: MenuItem[] = [
   {
     id: "1",
     title: "Główna",
-    url: "/home",
+    url: "/",
     icon: home,
   },
   {
@@ -37,14 +38,15 @@ const menuItems: MenuItem[] = [
 
 function LeftBar() {
   return (
+    
     <div className="left-bar">
       {menuItems.map((element) => (
-        <a key={element.id} className="menu-item" href={element.url}>
+        <NavLink key={element.id} className="menu-item" to={element.url}>
           <span className="wrapper">
             <img src={element.icon} alt="" className="item-icon" />
           </span>
           {element.title}
-        </a>
+        </NavLink>
       ))}
     </div>
   );

@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import LoadingCircle from "../../components/LoadingCircle/LoadingCircle";
 import { getVideoById } from "../../core/api";
 import { VideoItemType } from "../../core/types/video-item";
+import "./VideoDetails.scss";
 
 function VideoDetails() {
   const [videoItem, setVideoItem] = useState<VideoItemType | null>(null);
@@ -20,11 +22,12 @@ function VideoDetails() {
     getVideoItems();
   }, [id]);
 
+  if (loading) return <LoadingCircle />;
   if (!videoItem) return null;
-  if (loading) return <span>Loading...</span>;
 
   return (
     <div
+      className="player"
       dangerouslySetInnerHTML={{
         __html: videoItem?.player?.embedHtml,
       }}
