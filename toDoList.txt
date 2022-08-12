@@ -1,0 +1,4 @@
+1. Ostylować searchBar, Paginację
+2. Ostylować stronę searchResult
+4. dodać formularz logowania: login i hasło
+5. typescrypt typowanie elementów, funkcji, zmiennych, itd.

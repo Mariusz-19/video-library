@@ -1,0 +1,9 @@
+.main-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #202020;
+    max-height: "calc(100vh - 51px)";
+    overflow: "auto";
+    color: white;
+}

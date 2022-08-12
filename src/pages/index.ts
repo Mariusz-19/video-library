@@ -1,0 +1,5 @@
+export { default as Home } from "./Home/Home"
+export { default as CreateAccount } from "./CraateAccount/CreateAccount"
+export { default as Login } from "./Login/Login"
+export { default as SearchResults } from "./SearchResults/SearchResults"
+export { default as VideoDetails } from "./VideoDetails/VideoDetails"

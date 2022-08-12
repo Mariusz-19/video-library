@@ -1,0 +1,23 @@
+.video-item-box {
+    max-width: 355px;
+    padding: 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 0.3s;
+}
+
+.video-item-box:hover {
+    transform: scale(1.1);
+}
+
+.video-item-box {
+    > h4 {
+    padding-top: 10px;    
+    font-weight: bold;    
+    word-break: break-all;
+    };
+    > p {
+        padding-top: 5px;
+    };
+}

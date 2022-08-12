@@ -1,0 +1,50 @@
+.credentials {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    background: rgb(78 78 78);
+    padding: 56px;
+    border-radius: 7px;
+    border: white;
+    box-shadow: 0px 0px 50px 50px rgb(78, 78, 78);
+}
+.user-name {
+    margin-bottom: 5px;
+    width: 300px;
+    height: 25px;
+    border-radius: 5px;
+    border: none;
+    border-style: double;
+    padding: 5px;
+    font-size: 16px;
+
+
+}
+.password {
+    margin-bottom: 10px;
+    width: 300px;
+    height: 25px;
+    border-radius: 5px;
+    border: none;
+    border-style: double;
+    padding: 5px;
+    font-size: 16px;
+}
+.button {
+    margin-top: 10px;
+    cursor: pointer;
+    animation-name: flash;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes flash {
+    from {background-color: rgb(158, 18, 18);}
+    to {background-color: rgb(177, 177, 177);}
+}
+
+.forgot-password{
+    color:aliceblue
+}
