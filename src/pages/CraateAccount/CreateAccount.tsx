@@ -9,7 +9,7 @@ function CreateAccount() {
       create password<input className="password" type="password" />
       confirm password<input className="password" type="password" />
       <button className="login-button" onClick={() => navigate("/login")}>
-        Login
+        create account
       </button>
     </form>
   );

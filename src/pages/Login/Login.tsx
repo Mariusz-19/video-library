@@ -10,7 +10,7 @@ function Login() {
       <a className="forgot-password" href="">Forgot password</a>
       <div className="create-account">
         <button className="button" onClick={() => navigate("/create-account")}>
-          Create account
+          Login
         </button>
       </div>
     </div>
