@@ -1,17 +1,20 @@
 import { AppBar } from "./components";
 import LeftBar from "./components/LeftBar/LeftBar";
-import "./App.scss";
 import MainContent from "./components/MainContent/MainContent";
+import "./App.scss";
+import { AuthProvider } from "./components/AuthProvider/AuthProvider";
 
 function App() {
   return (
-    <div className="App">
-      <AppBar />
-      <div style={{ display: "flex" }}>
-        <LeftBar />
-        <MainContent />
+    <AuthProvider>
+      <div className="App">
+        <AppBar />
+        <div style={{ display: "flex" }}>
+          <LeftBar />
+          <MainContent />
+        </div>
       </div>
-    </div>
+    </AuthProvider>
   );
 }
 
