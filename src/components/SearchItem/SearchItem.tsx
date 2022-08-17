@@ -2,7 +2,7 @@ import { createRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "./SearchItem.scss";
 
-function SearchBox() {
+function SearchItem() {
   const navigate = useNavigate();
   const inputRef = createRef<HTMLInputElement>();
 
@@ -24,4 +24,4 @@ function SearchBox() {
   );
 }
 
-export default SearchBox;
+export default SearchItem;

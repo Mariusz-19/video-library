@@ -8,9 +8,17 @@ function Login() {
   const navigate = useNavigate();
   const emailInputRef = createRef<HTMLInputElement>();
   const passwordInputRef = createRef<HTMLInputElement>();
-
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+
+  useEffect(() => {
+    const errorMassages: Record<string, string> = {
+      "Firebase: Error (auth/user-not-found).": "Wrong password",
+    };
+    if (error) {
+      window.alert(errorMassages[error.message] || "Something went wrong");
+    }
+  }, [error]);
 
   const handleLogin = (e: any) => {
     e.preventDefault();
@@ -18,28 +26,22 @@ function Login() {
     const email = emailInputRef?.current?.value;
     const password = passwordInputRef?.current?.value;
     if (!email || !password) return;
-    signInWithEmailAndPassword(email, password)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.error(error);
-      });
+    signInWithEmailAndPassword(email, password).catch((err) => {});
   };
 
   return (
-    <div className="credentials">
-      <form onSubmit={handleLogin}>
+    <div >
+      <form className="credentials" onSubmit={handleLogin}>
         <input
           ref={emailInputRef}
           placeholder="enter email"
-          className="user-name"
+          className={`user-name ${error ? "error" : ""}`}
           type="email"
         />
         <input
           ref={passwordInputRef}
           placeholder="enter password"
-          className="password"
+          className={`password ${error ? "error" : ""}`}
           type="password"
         />
         <a className="forgot-password" href="">

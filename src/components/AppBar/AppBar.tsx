@@ -1,11 +1,9 @@
 import React, { useContext } from "react";
-import { signOut } from "firebase/auth";
-import { AuthContext } from "../AuthProvider/AuthProvider";
-import LoginButton from "../LoginButton/LoginButton";
-import SearchBox from "../SearchItem/SearchItem";
-import { auth } from "../../core/modules/firebase";
-import "./AppBar.scss";
 import { useNavigate } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import { auth } from "../../core/modules/firebase";
+import { AuthContext, LoginButton, SearchItem } from "..";
+import "./AppBar.scss";
 
 function AppBar() {
   const { user } = useContext(AuthContext);
@@ -13,7 +11,7 @@ function AppBar() {
 
   return (
     <div className="app-bar">
-      <SearchBox />
+      <SearchItem />
       {user ? (
         user?.email
       ) : (

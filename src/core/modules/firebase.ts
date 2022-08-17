@@ -5,13 +5,14 @@ import { getAuth } from "firebase/auth";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+console.log(process.env)
 export const firebaseConfig = {
-  apiKey: "AIzaSyDBYW8IrTR3_erHjdXFJxi83Sz8JGhmrmo",
-  authDomain: "video-library-358111.firebaseapp.com",
-  projectId: "video-library-358111",
-  storageBucket: "video-library-358111.appspot.com",
-  messagingSenderId: "558090168229",
-  appId: "1:558090168229:web:8b7f37e8c98d7e69fc2a4c"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID
 };
 
 // Initialize Firebase

@@ -1,15 +1,13 @@
-import { createRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { createRef, FormEvent } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../core/modules/firebase";
 import "./CreateAccount.scss";
 
 function CreateAccount() {
-  const navigate = useNavigate();
   const emailInputRef = createRef<HTMLInputElement>();
   const passwordInputRef = createRef<HTMLInputElement>();
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const emailInputValue = emailInputRef.current?.value;
     const passwordInputValue = passwordInputRef.current?.value;
@@ -17,15 +15,8 @@ function CreateAccount() {
     if (!emailInputValue || !passwordInputValue) return;
 
     createUserWithEmailAndPassword(auth, emailInputValue, passwordInputValue)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        // ...
-      })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // ..
+        // TODO Add Error Handling
       });
   };
 

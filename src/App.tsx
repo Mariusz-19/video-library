@@ -1,8 +1,5 @@
-import { AppBar } from "./components";
-import LeftBar from "./components/LeftBar/LeftBar";
-import MainContent from "./components/MainContent/MainContent";
 import "./App.scss";
-import { AuthProvider } from "./components/AuthProvider/AuthProvider";
+import { AppBar, LeftBar, MainContent, AuthProvider } from "./components"
 
 function App() {
   return (
