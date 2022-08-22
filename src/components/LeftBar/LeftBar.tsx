@@ -1,5 +1,7 @@
+import { useContext, useMemo } from "react";
 import { NavLink } from "react-router-dom";
 import { home, kids, library, favorite } from "../../assets/icons";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 import "./LeftBar.scss";
 
 type MenuItem = {
@@ -37,10 +39,18 @@ const menuItems: MenuItem[] = [
 ];
 
 function LeftBar() {
+  const { user } = useContext(AuthContext);
+
+  const menuItemsMemo = useMemo(() => {
+    if (user) {
+      return menuItems;
+    }
+    return menuItems.filter((item) => item.title !== "Ulubione");
+  }, [user]);
+
   return (
-    
     <div className="left-bar">
-      {menuItems.map((element) => (
+      {menuItemsMemo.map((element) => (
         <NavLink key={element.id} className="menu-item" to={element.url}>
           <span className="wrapper">
             <img src={element.icon} alt="" className="item-icon" />

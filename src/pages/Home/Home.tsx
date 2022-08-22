@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import ReactPaginate from "react-paginate";
 import { getVideos } from "../../core/api";
 import { VideoItemType, VideoResponse } from "../../core/types/video-item";
@@ -10,7 +10,6 @@ import LoadingCircle from "../../components/LoadingCircle/LoadingCircle";
 export function VideoItemList() {
   const [videoItems, setVideoItems] = useState<VideoItemType[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
-  const [actualPage, setActualPage] = useState<number>(1);
   const [pageMeta, setPageMeta] = useState<Pick<
     VideoResponse,
     "nextPageToken" | "pageInfo" | "prevPageToken"
@@ -52,7 +51,6 @@ export function VideoItemList() {
     if (isPrevious) {
       getVideoItems(pageMeta?.prevPageToken || "");
     }
-    setActualPage(nextSelectedPage);
   };
 
   if (loading) return <LoadingCircle />;

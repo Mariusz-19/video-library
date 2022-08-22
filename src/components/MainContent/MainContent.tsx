@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import {
   CreateAccount,
   Home,
@@ -6,6 +6,9 @@ import {
   SearchResults,
   VideoDetails,
 } from "../../pages";
+import Favorites from "../../pages/Faavorites/Favorites";
+import { AuthRoute } from "../AuthRoute/AuthRoute";
+import { UnAuthRoute } from "../UnAuthRoute/UnAuthRoute";
 import "./MainContent.scss";
 
 function MainContent() {
@@ -15,8 +18,30 @@ function MainContent() {
         <Route path="/" element={<Home />} />
         <Route path="/movie/:id" element={<VideoDetails />} />
         <Route path="/results/*" element={<SearchResults />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/create-account" element={<CreateAccount />} />
+        <Route
+          path="/favorite"
+          element={
+            <AuthRoute>
+              <Favorites />
+            </AuthRoute>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <UnAuthRoute>
+              <Login />
+            </UnAuthRoute>
+          }
+        />
+        <Route
+          path="/create-account"
+          element={
+            <UnAuthRoute>
+              <CreateAccount />
+            </UnAuthRoute>
+          }
+        />
         <Route path="*" element={<span>Page not found</span>} />
       </Routes>
     </div>

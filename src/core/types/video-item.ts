@@ -1,3 +1,5 @@
+import {  User } from 'firebase/auth';
+
 export type ContentDetailsType = {
     "duration": string,
     "dimension": string,
@@ -76,4 +78,10 @@ export type VideoResponse = {
         "totalResults": number,
         "resultsPerPage": number
     }
+}
+
+export type AuthContextType = {
+    "user": User | null | undefined,
+    "loading": boolean,
+    "error": unknown
 }

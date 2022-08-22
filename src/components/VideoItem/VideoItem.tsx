@@ -9,7 +9,7 @@ type VideoItemsProps = {
 function VideoItem({ itemId, itemImg }: VideoItemsProps) {
   const navigate = useNavigate();
   return (
-    <div className="video-item" onClick={() => navigate(`/movie/${ itemId }`)}>
+    <div className="video-item" onClick={() => navigate(`/movie/${itemId}`)}>
       <img alt="" src={itemImg}></img>
     </div>
   );
