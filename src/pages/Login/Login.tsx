@@ -1,14 +1,13 @@
 import { createRef, useEffect } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
 import { auth } from "../../core/modules/firebase";
 import "./Login.scss";
 
 function Login() {
-  const navigate = useNavigate();
   const emailInputRef = createRef<HTMLInputElement>();
   const passwordInputRef = createRef<HTMLInputElement>();
-  const [signInWithEmailAndPassword, user, loading, error] =
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [signInWithEmailAndPassword, _, __, error] =
     useSignInWithEmailAndPassword(auth);
 
   useEffect(() => {
@@ -30,7 +29,7 @@ function Login() {
   };
 
   return (
-    <div >
+    <div>
       <form className="credentials" onSubmit={handleLogin}>
         <input
           ref={emailInputRef}
@@ -44,9 +43,7 @@ function Login() {
           className={`password ${error ? "error" : ""}`}
           type="password"
         />
-        <a className="forgot-password" href="">
-          Forgot password
-        </a>
+        <span className="forgot-password">Forgot password</span>
         <button className="button" type="submit">
           Login
         </button>

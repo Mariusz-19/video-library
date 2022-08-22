@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { AddToFavorite } from "../../components";
 import LoadingCircle from "../../components/LoadingCircle/LoadingCircle";
 import { getVideoById } from "../../core/api";
 import { VideoItemType } from "../../core/types/video-item";
@@ -26,12 +27,15 @@ function VideoDetails() {
   if (!videoItem) return null;
 
   return (
-    <div
-      className="player"
-      dangerouslySetInnerHTML={{
-        __html: videoItem?.player?.embedHtml,
-      }}
-    />
+    <div>
+      <div
+        className="player"
+        dangerouslySetInnerHTML={{
+          __html: videoItem?.player?.embedHtml,
+        }}
+      />
+      <AddToFavorite isFavorite />
+    </div>
   );
 }
 
