@@ -34,7 +34,7 @@ function VideoDetails() {
           __html: videoItem?.player?.embedHtml,
         }}
       />
-      <AddToFavorite isFavorite />
+      <AddToFavorite />
     </div>
   );
 }
