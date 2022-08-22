@@ -12,18 +12,24 @@ function AppBar() {
   return (
     <div className="app-bar">
       <SearchItem />
+      <div className="user-email">
       {user ? (
         user?.email
       ) : (
         <React.Fragment>
           <LoginButton />
-          <button onClick={() => navigate("/create-account")}>
+          <button className="button" onClick={() => navigate("/create-account")}>
             Create account
           </button>
         </React.Fragment>
-      )}
-      {user ? <button onClick={() => signOut(auth)}>Logout</button> : null}
-    </div>
+        )}
+        </div>
+        {user ? (
+          <button className="button" onClick={() => signOut(auth)}>
+            Logout
+          </button>
+        ) : null}
+      </div>
   );
 }
 

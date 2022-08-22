@@ -6,6 +6,7 @@ import {
   SearchResults,
   VideoDetails,
 } from "../../pages";
+import Favorites from "../../pages/Faavorites/Favorites";
 import { AuthRoute } from "../AuthRoute/AuthRoute";
 import { UnAuthRoute } from "../UnAuthRoute/UnAuthRoute";
 import "./MainContent.scss";
@@ -21,7 +22,7 @@ function MainContent() {
           path="/favorite"
           element={
             <AuthRoute>
-              <span>Favorite movies list</span>
+              <Favorites />
             </AuthRoute>
           }
         />

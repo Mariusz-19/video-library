@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import AddToFavorite from "../AddToFavorite/AddToFavorite";
 import "./VideoItem.scss";
 
 type VideoItemsProps = {
@@ -11,7 +12,10 @@ function VideoItem({ itemId, itemImg }: VideoItemsProps) {
   return (
     <div className="video-item" onClick={() => navigate(`/movie/${ itemId }`)}>
       <img alt="" src={itemImg}></img>
+      <div><AddToFavorite /></div>
     </div>
+      
+
   );
 }
 
